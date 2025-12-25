@@ -1,0 +1,178 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+/* CANVAS BACKGROUND */
+#particle-canvas{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  background:#050505;
+}
+
+body{
+  background:transparent;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* CURSOR */
+.cursor{
+  width:18px;
+  height:18px;
+  border:2px solid #4fd1c5;
+  border-radius:50%;
+  position:fixed;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  z-index:999;
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 10%;
+}
+
+.hero-img{
+  width:200px;
+  border-radius:18px;
+  animation:float 6s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-15px)}
+}
+
+.hero h1{
+  font-size:clamp(2.5rem,5vw,4.5rem);
+  line-height:1.1;
+}
+
+.hero span{color:#4fd1c5}
+
+.hero p{
+  margin:20px 0;
+  opacity:.7;
+}
+
+/* BUTTON */
+.btn{
+  padding:14px 34px;
+  border:1px solid #4fd1c5;
+  border-radius:40px;
+  color:#4fd1c5;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.btn:hover{
+  background:#4fd1c5;
+  color:#000;
+}
+
+/* SECTIONS */
+section{
+  padding:12vh 10%;
+}
+
+h2{
+  font-size:2rem;
+  margin-bottom:30px;
+}
+
+/* SERVICES */
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+.service{
+  padding:25px;
+  background:#0d0d0d;
+  border-radius:16px;
+  text-align:center;
+}
+
+/* SKILLS */
+.skill{
+  max-width:500px;
+  margin-bottom:20px;
+}
+
+.bar{
+  background:#1a1a1a;
+  height:8px;
+  border-radius:20px;
+}
+
+.bar div{
+  height:8px;
+  background:#4fd1c5;
+}
+
+/* PROJECTS */
+.project{
+  display:flex;
+  gap:30px;
+  align-items:center;
+  margin-bottom:60px;
+}
+
+.project img{
+  width:150px;
+  border-radius:14px;
+}
+
+/* PROCESS */
+.process ul{
+  list-style:none;
+}
+
+.process li{
+  padding:10px 0;
+  opacity:.8;
+}
+
+/* CONTACT */
+.contact{text-align:center}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  opacity:.5;
+}
+
+/* REVEAL */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    gap:40px;
+  }
+  .project{
+    flex-direction:column;
+    text-align:center;
+  }
+}
